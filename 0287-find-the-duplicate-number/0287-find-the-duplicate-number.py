@@ -4,13 +4,12 @@ class Solution:
         ind = 0
         n = len(nums)
         while ind < n:
-            while nums[nums[ind] - 1] != nums[ind]:
-                print(nums[nums[ind] - 1], nums[ind])
-                temp = nums[ind]-1
-                temp2 = nums[temp]
-                nums[temp] = nums[ind]
-                nums[ind] = temp2
-                # nums[ind], nums[nums[ind] - 1] = nums[nums[ind] - 1], nums[ind]
+            val = nums[ind]
+            while nums[val-1]!=nums[ind]:
+                nums[val-1], nums[ind] = nums[ind], nums[val-1]
+                val = nums[ind]
+            
+                
             ind += 1
         return nums[-1]
 
