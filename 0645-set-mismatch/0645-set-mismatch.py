@@ -8,6 +8,7 @@ class Solution:
                 nums[ind], nums[val-1] = nums[val-1], nums[ind]
                 val = nums[ind]
             ind += 1
+            
         for ind in range(length):
             if nums[ind]!=ind+1:
                 repeating = nums[ind]
