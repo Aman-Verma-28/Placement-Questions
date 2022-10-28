@@ -3,14 +3,10 @@ class Solution:
         hashmap = {}
         
         for string in strs:
-            list_val = [0 for i in range(26)]
-            for cur in string:
-                list_val[ord(cur)-ord('a')]+=1
-            
-            tuple_val = tuple(list_val)
-            if tuple_val in hashmap:
-                hashmap[tuple_val].append(string)
+            sorted_val = "".join(sorted(string))
+            if sorted_val in hashmap:
+                hashmap[sorted_val].append(string)
             else:
-                hashmap[tuple_val]=[string]
-        
+                hashmap[sorted_val]=[string]
+                
         return hashmap.values()
