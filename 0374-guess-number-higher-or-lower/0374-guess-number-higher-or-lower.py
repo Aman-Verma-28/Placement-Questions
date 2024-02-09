@@ -12,8 +12,7 @@ class Solution:
         high = n
         while low<=high:
             mid = (low+high)//2
-            val = guess(mid)
-            if val == 0:
+            if (val := guess(mid)) == 0:
                 return mid
             if val==1:
                 low = mid + 1

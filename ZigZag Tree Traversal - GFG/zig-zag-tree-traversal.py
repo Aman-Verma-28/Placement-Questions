@@ -18,8 +18,7 @@ class Solution:
         cur = []
         flag = False
         while len(queue)>1:
-            node = queue.popleft()
-            if node=='$':
+            if (node := queue.popleft())=='$':
                 queue.append('$')
                 if flag:
                     levels.extend(cur[::-1])
@@ -84,10 +83,9 @@ def buildTree(s):
         size=size-1
         
         # Get the current node's value from the string
-        currVal=ip[i]
         
         # If the left child is not null
-        if(currVal!="N"):
+        if((currVal := ip[i])!="N"):
             
             # Create the left child for the current node
             currNode.left=Node(int(currVal))
@@ -99,10 +97,9 @@ def buildTree(s):
         i=i+1
         if(i>=len(ip)):
             break
-        currVal=ip[i]
         
         # If the right child is not null
-        if(currVal!="N"):
+        if((currVal := ip[i])!="N"):
             
             # Create the right child for the current node
             currNode.right=Node(int(currVal))

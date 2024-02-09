@@ -11,8 +11,7 @@ class Solution:
         root = TrieNode('\0')
         for string in strs:
             cur = root
-            length = len(string)
-            if length==0:
+            if (length := len(string))==0:
                 return ''
             for index in range(len(string)):
                 value = string[index]
